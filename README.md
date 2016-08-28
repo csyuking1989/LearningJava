@@ -1,2 +1,8 @@
-# learnpythonthehardway
-I'm learning Python with zero experience, so I hope I will get your help!
+## Learn Java the hard way
+1. 从2016年8月15日到2016年年底，五个月的时间，把java知识过一遍。
+2. 这里是对一些知识的总结、归纳、比较，打好基本功。
+3. 保证一周至少40小时的学习时间，五个月差不多800小时。 
+4. 打算30%的时间用在理论上，70%的时间用在写代码上。
+5. 这里只写理论部分，具体练习写代码记录在github上的另外一个仓库（github账户名: csyuking1989)。 
+
+
