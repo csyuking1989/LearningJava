@@ -5,13 +5,13 @@
 
 > _JSP定义：运行在服务器端的Java页面，使用HTML嵌套Java代码实现 , Java代码用&lt;%  %&gt;包起来。   _
 
-  在JSP页面中实现换行输出内容：
+在JSP页面中实现换行输出内容：
 
 ```
 <%
     out.println("this is test<br>"); // 这里要用<br> 而不能用\n 
     out.println("this is a test2");
-%>    
+%>
 ```
 
 
