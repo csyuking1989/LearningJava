@@ -52,7 +52,6 @@
   </form>
 </body>
 </html>
-
 ```
 
 **第2步, 获取登录信息的代码,保存在doUserCreate.jsp：**
@@ -71,6 +70,44 @@
 然后在步骤1中，填完注册信息，就会跳到步骤2中的页面，自动显示刚才填入的注册信息。
 
 注解：步骤1中method的方法有两种，get和post，区别是 页面跳转后，get后面有参数，安全性低，post后面无参数，安全性相对较高。 
+
+** 第三步，判断用户名是否为admin，如果是admin，那么提示用户名不符，如果非admin，则跳转到index.jsp页面 :  **
+
+  将以下代码插入到doUserCreate.jsp中：
+
+```
+if(userName.equals("admin"){ 
+    //  提示用户不存在，不能注册 
+    request.getRequestDispatcher("userCreate.jsp").forword(request,response); // 转发
+ } else{
+    // 提示注册成功 
+    response.sendRedirect("index.jsp"); // 重定向
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
