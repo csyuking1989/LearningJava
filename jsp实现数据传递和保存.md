@@ -69,31 +69,47 @@
 
 然后在步骤1中，填完注册信息，就会跳到步骤2中的页面，自动显示刚才填入的注册信息。
 
-注解：步骤1中method的方法有两种，get和post，区别是 页面跳转后，get后面有参数，安全性低，post后面无参数，安全性相对较高。 
+注解：步骤1中method的方法有两种，get和post，区别是 页面跳转后，get后面有参数，安全性低，post后面无参数，安全性相对较高。
 
-** 第三步，判断用户名是否为admin，如果是admin，那么提示用户名不符，如果非admin，则跳转到index.jsp页面 :  **
+** 第三步，判断用户名是否为admin，如果是admin，那么提示用户名不符，并且跳转到原注册页面；如果非admin，则跳转到index.jsp页面 :  **
 
-  将以下代码插入到doUserCreate.jsp中：
+将以下代码插入到doUserCreate.jsp中：
 
 ```
 if(userName.equals("admin"){ 
-    //  提示用户不存在，不能注册 
+    //  提示用户不存在，不能注册  
+    request.setAttribute("message","用户名admin已存在，不能注册!")
     request.getRequestDispatcher("userCreate.jsp").forword(request,response); // 转发
  } else{
-    // 提示注册成功 
+    // 提示注册成功 ,同时提示成功 
+    request.setAttribute("message","注册成功");
     response.sendRedirect("index.jsp"); // 重定向
 }
 ```
 
+为了在原注册页面，即userCreate.jsp中得到注册不成功的提示信息，需要加入在userCreate.jsp中加入如下代码： 
 
+```
+<%  
+Object mess = request.getAttribute("message");
+if(mess!=null){
+    out.println(mess.toString());
+}
+%>
+```
 
+为了在index.jsp中，提示注册成功的信息，需要在index.jsp中加入如下代码 
 
+```
+<% 
+Object mess = request.getAttribute("message");
+if(mess!=null){
+    out.println(mess.toString());
+}
+%>
+```
 
-
-
-
-
-
+第四部，在请求中保存属性
 
 
 
