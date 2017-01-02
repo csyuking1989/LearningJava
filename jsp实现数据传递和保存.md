@@ -87,7 +87,7 @@ if(userName.equals("admin"){
 }
 ```
 
-为了在原注册页面，即userCreate.jsp中得到注册不成功的提示信息，需要加入在userCreate.jsp中加入如下代码： 
+**为了在原注册页面，即userCreate.jsp中得到注册不成功的提示信息，需要加入在userCreate.jsp中加入如下代码：**
 
 ```
 <%  
@@ -98,7 +98,7 @@ if(mess!=null){
 %>
 ```
 
-为了在index.jsp中，提示注册成功的信息，需要在index.jsp中加入如下代码 
+**为了在index.jsp中，提示注册成功的信息，需要在index.jsp中加入如下代码**
 
 ```
 <% 
@@ -109,7 +109,25 @@ if(mess!=null){
 %>
 ```
 
-第四部，在请求中保存属性
+**第4步，登陆保存用户状态, 在doUserCreate.jsp 插入以下代码：**
+
+```
+   session.setAttribute("user",username); 
+   response.sendRedirect("index.jsp"); // 页面跳转到index.jsp
+```
+
+**同时在index.jsp中加入如下代码，来接受session信息: **
+
+```
+Object 0 = session.getAttribute("user"); 
+if(0==null){ 
+    // 一个label标签
+} else if{ 
+    out.println("欢迎你:"+0.toString());
+}
+```
+
+
 
 
 
