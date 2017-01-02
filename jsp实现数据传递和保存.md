@@ -112,7 +112,7 @@ if(mess!=null){
 **第4步，登陆保存用户状态, 在doUserCreate.jsp 插入以下代码：**
 
 ```
-   session.setAttribute("user",username); 
+session.setAttribute("user",username); 
    response.sendRedirect("index.jsp"); // 页面跳转到index.jsp
 ```
 
@@ -126,24 +126,6 @@ if(0==null){
     out.println("欢迎你:"+0.toString());
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
